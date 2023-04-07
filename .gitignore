@@ -130,3 +130,9 @@ dmypy.json
 
 # conf.json
 conf.json
+
+# Pycharm
+.idea/
+
+# MacOs
+.DS_Store
