@@ -134,5 +134,11 @@ conf.json
 # Pycharm
 .idea/
 
+# Fleet
+.fleet/
+
 # MacOs
 .DS_Store
+
+# Data
+data/

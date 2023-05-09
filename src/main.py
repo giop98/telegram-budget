@@ -3,7 +3,6 @@ import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
 from user import User
-from user import add_entry_callback
 
 
 if __name__ == "__main__":
@@ -27,6 +26,6 @@ if __name__ == "__main__":
 
     # Add the start command handler
     application.add_handler(CommandHandler("start", user.start_callback))
-    application.add_handler(MessageHandler(filters.ALL, add_entry_callback))
+    application.add_handler(MessageHandler(filters.ALL, user.add_entry_callback))
 
     application.run_polling()
