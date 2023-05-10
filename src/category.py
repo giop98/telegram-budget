@@ -14,7 +14,9 @@ def check_category(category: str):
         with open("../categories/{}.json".format(category.lower()), "w") as f:
             json.dump([], f, indent=4)
 
-def add_category_entry:
+def add_category_entry():
+    pass
 
 
 def get_category():
+    pass

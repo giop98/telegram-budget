@@ -1,9 +1,10 @@
 import json
 import logging
-from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, filters
-from user import User
 
+from telegram import Update
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackQueryHandler
+from user import User
+from user import report_button
 
 if __name__ == "__main__":
     # Initialize logging
@@ -26,6 +27,8 @@ if __name__ == "__main__":
 
     # Add the start command handler
     application.add_handler(CommandHandler("start", user.start_callback))
+    application.add_handler(CommandHandler("report", user.report_callback))
+    application.add_handler(CallbackQueryHandler(report_button, pattern="1|3|6"))
     application.add_handler(MessageHandler(filters.ALL, user.add_entry_callback))
 
     application.run_polling()
